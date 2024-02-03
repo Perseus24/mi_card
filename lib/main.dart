@@ -13,39 +13,40 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Center(child: Text("Mi Card")),
-          backgroundColor: Colors.blue,
-        ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Container(
-              height: 100,
-              color: Colors.grey,
-              child: Center(child: Text("Here is a container")),
-            ),
-            Container(
-              height: 100,
-              color: Colors.blueGrey,
-              child: Center(child: Text("Here is another container")),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  color: Colors.green,
-                  child: Center(child: Text("A container within a row")),
+        backgroundColor: Colors.teal,
+        body: SafeArea(
+          child: Column(
+            children: [
+              SizedBox(height: 250,),
+              CircleAvatar(
+                radius: 50,
+                backgroundImage: AssetImage('images/sample.jpg')
+              ),
+              Text(
+                'Cy Jay Herrera',
+                style: TextStyle(
+                  fontFamily: 'Pacifico',
+                  fontSize: 40,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold
                 ),
-                Container(
-                  color: Colors.green[200],
-                  child: Center(child: Text("Another container!")),
+              ),
+              SizedBox(height: 10,),
+              Text(
+                'FLUTTER DEVELOPER',
+                style: TextStyle(
+                    fontFamily: 'SourceSans3',
+                    fontSize: 20,
+                    color: Colors.teal.shade100,
+                    letterSpacing: 2.5,
+                ),
 
-                )
-              ],
-            )
-          ],
-        ),
+              ),
+              Container(),
+              Container()
+            ],
+          ),
+        )
       ),
     );
   }
